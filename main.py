@@ -8,7 +8,6 @@ import itertools
 import sys
 from licensing.models import *
 from licensing.methods import Key, Helpers
-import sleep
 
 
 
