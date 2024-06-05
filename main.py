@@ -14,7 +14,7 @@ from licensing.methods import Key, Helpers
     
 
 
-key = input(Enter your key: )
+key = input("Enter your key: ")
 
 
 
