@@ -11,7 +11,21 @@ from licensing.methods import Key, Helpers
 
 
 
-    
+# ANSI escape code for green text
+GREEN = "\033[92m"
+RESET = "\033[0m"
+
+# Save the original stdout.write method
+original_write = sys.stdout.write
+
+# Define a new write method that adds the green color to all output
+def green_write(text):
+    original_write(f"{GREEN}{text}{RESET}")
+
+# Override the default stdout.write method
+sys.stdout.write = green_write
+
+# Test to show all text in green
 
 
 usr_key = input("Enter your key: ")
