@@ -14,7 +14,7 @@ from licensing.methods import Key, Helpers
     
 
 
-key = input("Enter your key: ")
+usr_key = input("Enter your key: ")
 
 
 
@@ -26,7 +26,7 @@ auth = "WyI4NTExMjg4MSIsIitYWFZuNkthZVhrTVl0Q1FjWGlwWWtOR3R2Sjczd01QbmswV2VrOWQi
 result = Key.activate(token=auth,\
                    rsa_pub_key=RSAPubKey,\
                    product_id=25881, \
-                   key="key",\
+                   key=usr_key,\
                    machine_code=Helpers.GetMachineCode(v=2))
 
 if result[0] == None or not Helpers.IsOnRightMachine(result[0], v=2):
