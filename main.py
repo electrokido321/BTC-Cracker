@@ -40,15 +40,6 @@ else:
     time.sleep(1)
     print("Setting up")
     time.sleep(5)
-            class GreenText:
-    def __init__(self, text):
-        self.text = text
-
-    def __repr__(self):
-        return "\033[92m" + self.text + "\033[0m"
-
-sys.stdout = GreenText(sys.stdout)
-sys.stderr = GreenText(sys.stderr)
 
 def generate_mnemonic():
     mnemo = mnemonic.Mnemonic("english")
