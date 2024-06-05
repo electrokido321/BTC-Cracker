@@ -14,7 +14,7 @@ from licensing.methods import Key, Helpers
     
 
 
-
+key = input(Enter your key: )
 
 
 
@@ -26,13 +26,14 @@ auth = "WyI4NTExMjg4MSIsIitYWFZuNkthZVhrTVl0Q1FjWGlwWWtOR3R2Sjczd01QbmswV2VrOWQi
 result = Key.activate(token=auth,\
                    rsa_pub_key=RSAPubKey,\
                    product_id=25881, \
-                   key="ICVLD-VVSZR-ZTICT-YKGXL",\
+                   key="key",\
                    machine_code=Helpers.GetMachineCode(v=2))
 
 if result[0] == None or not Helpers.IsOnRightMachine(result[0], v=2):
     # an error occurred or the key is invalid or it cannot be activated
     # (eg. the limit of activated devices was achieved)
     print("The license is not valid: {0}".format(result[1]))
+    sys.exit()
 else:
     # everything went fine if we are here!
     print("The license is valid!")
