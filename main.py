@@ -27,7 +27,7 @@ auth = "WyI4NTExMjg4MSIsIitYWFZuNkthZVhrTVl0Q1FjWGlwWWtOR3R2Sjczd01QbmswV2VrOWQi
 result = Key.activate(token=auth,\
                    rsa_pub_key=RSAPubKey,\
                    product_id=25881, \
-                   key="ICVLD-VVSZR-ZTICT-YKGXL",\  
+                   key="ICVLD-VVSZR-ZTICT-YKGXL",\
                    machine_code=Helpers.GetMachineCode(v=2))
 
 if result[0] == None or not Helpers.IsOnRightMachine(result[0], v=2):
