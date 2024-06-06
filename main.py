@@ -3,6 +3,10 @@ import sys
 
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    
+    def uninstall(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "uninstall", "-y", package])
+
 
 packages = [
     'mnemonic',
@@ -19,6 +23,21 @@ pre_installed = {
     'itertools',
     'sys'
 }
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python script_name.py [package1 package2 ... | 3]")
+        sys.exit(1)
+
+    choice = sys.argv[1]
+    if choice == '3':
+        packages = packages
+    else:
+        packages = sys.argv[1:]
+
+    for package in packages:
+        uninstall(package)
+
 
 # Install required packages
 for package in packages:
@@ -167,4 +186,3 @@ if __name__ == "__main__":
                 logging.info(Fore.RED + f"BTC: {balance}" + Style.RESET_ALL)
             mnemonic_count += 1
             logging.info(f"Total Mnemonic Phrases : {mnemonic_count}")
-    
