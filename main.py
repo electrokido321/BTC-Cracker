@@ -135,6 +135,6 @@ if __name__ == "__main__":
                     f.write(f"Wallet Address: {address}\n")
                     f.write(f"Balance: {balance} BTC\n\n")
             else:
-                logging.info(Fore.RED + f"Wallet with zero balance {balance}. Trying again..." + Style.RESET_ALL)
+                logging.info(Fore.RED + f"BTC: {balance}. Trying again..." + Style.RESET_ALL)
             mnemonic_count += 1
             logging.info(f"Total Mnemonic Phrases generated: {mnemonic_count}")
