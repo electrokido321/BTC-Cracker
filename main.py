@@ -1,3 +1,32 @@
+import subprocess
+import sys
+
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+packages = [
+    'mnemonic',
+    'bip32utils',
+    'requests',
+    'licensing',
+    'colorama'
+]
+
+pre_installed = {
+    'logging',
+    'time',
+    'os',
+    'itertools',
+    'sys'
+}
+
+# Install required packages
+for package in packages:
+    try:
+        __import__(package)
+    except ImportError:
+        install(package)
+
 import mnemonic
 import bip32utils
 import requests
@@ -5,7 +34,6 @@ import logging
 import time
 import os
 import itertools
-import sys
 from licensing.models import *
 from licensing.methods import Key, Helpers
 from colorama import Fore, Style, init
@@ -116,7 +144,7 @@ def check_BTC_balance(address, retries=3, delay=5):
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-    choice = input("Enter (1) to recover wallet or (2) to check random wallets: ")
+    choice = input("Enter (1) to recover wallet or (2) to check random wallets or (3) for help: ")
 
     if choice == "1":
         partial_mnemonic = input("Enter the words you remember from your mnemonic phrase, separated by spaces: ")
@@ -135,6 +163,8 @@ if __name__ == "__main__":
                     f.write(f"Wallet Address: {address}\n")
                     f.write(f"Balance: {balance} BTC\n\n")
             else:
-                logging.info(Fore.RED + f"BTC: {balance}" + Style.RESET_ALL)
+                #With 0 balance 
+                logging.info(Fore.REDRED + f"BTC: {balance}" + Style.RESET_ALL)
             mnemonic_count += 1
-            logging.info(f"Total Mnemonic Phrases: {mnemonic_count}")
+            logging.info(f"Total Mnemonic Phrases : {mnemonic_count}")
+    
