@@ -164,7 +164,7 @@ if __name__ == "__main__":
                     f.write(f"Balance: {balance} BTC\n\n")
             else:
                 #With 0 balance 
-                logging.info(Fore.REDRED + f"BTC: {balance}" + Style.RESET_ALL)
+                logging.info(Fore.RED + f"BTC: {balance}" + Style.RESET_ALL)
             mnemonic_count += 1
             logging.info(f"Total Mnemonic Phrases : {mnemonic_count}")
     
