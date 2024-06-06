@@ -20,20 +20,9 @@ pre_installed = {
     'sys'
 }
 
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Usage: python script_name.py [package1 package2 ... | 3]")
-        sys.exit(1)
 
-    choice = sys.argv[1]
-    if choice == '3':
-        packages = packages
-    else:
-        packages = sys.argv[1:]
 
-    for package in packages:
-        uninstall(package)
-
+    
 
 # Install required packages
 for package in packages:
