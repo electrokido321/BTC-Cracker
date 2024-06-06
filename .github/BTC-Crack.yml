@@ -29,3 +29,4 @@ jobs:
         python -m pip install --upgrade pip
         pip install mnemonic
         pip install licensing
+        pip install colorama
