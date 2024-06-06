@@ -7,7 +7,6 @@ def install(package):
     def uninstall(package):
     subprocess.check_call([sys.executable, "-m", "pip", "uninstall", "-y", package])
 
-
 packages = [
     'mnemonic',
     'bip32utils',
