@@ -3,9 +3,6 @@ import sys
 
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-    
-    def uninstall(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "uninstall", "-y", package])
 
 packages = [
     'mnemonic',
