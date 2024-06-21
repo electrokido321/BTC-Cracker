@@ -1,35 +1,4 @@
-import subprocess
-import sys
 
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-packages = [
-    'mnemonic',
-    'bip32utils',
-    'requests',
-    'licensing',
-    'colorama'
-]
-
-pre_installed = {
-    'logging',
-    'time',
-    'os',
-    'itertools',
-    'sys'
-}
-
-
-
-    
-
-# Install required packages
-for package in packages:
-    try:
-        __import__(package)
-    except ImportError:
-        install(package)
 
 import mnemonic
 import bip32utils
@@ -60,34 +29,6 @@ def green_write(text):
 sys.stdout.write = green_write
 
 # Test to show all text in green
-
-usr_key = input("Enter your key: ")
-
-
-
-
-
-RSAPubKey = "<RSAKeyValue><Modulus>6ABNcu0XIRZrzaJcueqLk3pWACSdl9DkrNPV9QnCAA1PVr2cf4kC9xiRzi5mIvtqK1oM0cVKcdJdEY9O+Ui8IqfVlGJQjnY+9t4PClzMVkRnMSXBbLqgIoazyQa4WMcyxUcV1atzB4qs7WY29W8xNNemTMUxFdG5d9KPxMnZzrYQRJ4/hQVukboIDd+GcgFaq/ytwNEwf8J5MUHnDxJVqSiB07ox+scHH6g5qITypU6xFQ3D2BZu/vJfPfl1QYVv4jzzFeXsYfnLDbnDHFEqaWcZhnWJjrUttqOsnwr+WbANSLzmqlowP9o967Wt58uCrAm4/U3gw7mD76pk7Hlubw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue>"
-auth = "WyI4NTExMjg4MSIsIitYWFZuNkthZVhrTVl0Q1FjWGlwWWtOR3R2Sjczd01QbmswV2VrOWQiXQ=="
-
-result = Key.activate(token=auth,\
-                   rsa_pub_key=RSAPubKey,\
-                   product_id=25881, \
-                   key=usr_key,\
-                   machine_code=Helpers.GetMachineCode(v=2))
-
-if result[0] == None or not Helpers.IsOnRightMachine(result[0], v=2):
-    # an error occurred or the key is invalid or it cannot be activated
-    # (eg. the limit of activated devices was achieved)
-    print("The license is not valid: {0}".format(result[1]))
-    sys.exit()
-else:
-    
-    # everything went fine if we are here!
-    print("The license is valid!")
-    time.sleep(1)
-    print("Setting things up")
-    time.sleep(5)
 
 def generate_mnemonic():
     mnemo = mnemonic.Mnemonic("english")
