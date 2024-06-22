@@ -1,6 +1,7 @@
 # Bitcoin Wallet Recovery Tool
 
-Buy it for 1€ only
+Its free so maybe an donation?
+All the way 👇 
 
 https://discord.com/invite/yyBgY7pGqX
 
