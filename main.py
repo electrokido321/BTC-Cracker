@@ -1,5 +1,37 @@
-
+import subprocess
 import sys
+
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip",>
+
+
+
+packages = [
+    'mnemonic',
+    'bip32utils',
+    'requests',
+    'licensing',
+    'colorama'
+]
+
+pre_installed = {
+    'logging',
+    'time',
+    'os',
+    'itertools',
+    'sys'
+}
+
+
+
+# Install required packages
+for package in packages:
+    try:
+        __import__(package)
+    except ImportError:
+        install(package)
+
+
 import mnemonic
 import bip32utils
 import requests
