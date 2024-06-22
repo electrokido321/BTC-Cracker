@@ -123,6 +123,11 @@ if __name__ == "__main__":
 
     choice = input("Enter (1) to recover wallet or (2) to check random wallets or (3) for help: ")
 
+if choice == "0":
+    print("test")
+
+
+    
     if choice == "1":
         partial_mnemonic = input("Enter the words you remember from your mnemonic phrase, separated by spaces: ")
         recover_wallet_from_partial_mnemonic(partial_mnemonic)
