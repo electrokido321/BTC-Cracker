@@ -168,5 +168,5 @@ def generate_wallets():
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-    # Start Flask server
-    app.run(debug=True)
+    # Start Flask server with a specific IP
+    app.run(host='192.168.1.100', port=5000, debug=True)
