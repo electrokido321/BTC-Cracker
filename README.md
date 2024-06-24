@@ -1,7 +1,6 @@
 # Bitcoin Wallet Recovery Tool
 
-Its free so maybe an donation?
-All the way 👇 
+50% off with IloveGithubFiles
 
 https://discord.com/invite/yyBgY7pGqX
 
